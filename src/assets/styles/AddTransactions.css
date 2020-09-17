@@ -1,0 +1,73 @@
+.input-container{
+    margin: 16px;
+}
+
+.add-trans-title{
+    font-size: 1.25rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin: 0;
+    color: white;
+}
+
+.desc-container , .amount-container{
+    border: 0;
+    margin: 0;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    min-width: 0;
+    flex-direction: column;
+    vertical-align: top;
+    margin-top: 10px!important;
+    width: 100%;
+}
+
+input{
+    border: none;
+    outline: none;
+    padding: 15px 8px;
+    font-size: 1rem;
+
+}
+
+input:focus{
+    border: none;
+    outline: none;
+    border-radius: 0 !important;
+
+}
+
+hr{
+    opacity: 0.05;
+}
+
+.btn-container{
+    margin: 16px 0px 0px;
+    text-align: center;
+}
+
+.btn{
+    padding: 6px 8px;
+    margin-right: 2px!important;
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 0.875rem;
+    min-width: 64px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-bottom: 10px!important;
+}
+
+.income-btn{
+    background-color: rgb(20 20 41 / 60%)!important;
+    width: 45%;
+}
+
+.expense-btn{
+    background-color: #8b0000!important;
+    width: 45%;
+}

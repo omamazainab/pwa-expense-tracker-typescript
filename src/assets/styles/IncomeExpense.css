@@ -1,0 +1,45 @@
+.inc-exp-root{
+    margin: 8px 16px 16px;
+}
+
+.inc-expense-container{
+    display: flex;
+    /* background-color: #0c5254b3; */
+}
+
+.income-container{
+    flex: 1 1;
+    background-color: rgb(20 20 41 / 60%)!important;
+    color: #f5f5f5!important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.expense-container{
+    flex: 1 1;
+    background-color: rgb(20 20 41 / 60%)!important;
+    color: #f5f5f5!important;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.income_title{
+    margin: 10px!important;
+}
+
+.expense_title{
+    margin: 10px!important;
+}
+
+.income{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.expense{
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0;
+}
