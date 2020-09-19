@@ -2,6 +2,7 @@ import React from 'react'
 import '../assets/styles/Balance.css'
 
 const Balance = () => {
+    
     return (
         <div className="text-center">
       <h6 className="heading balance_title">Balance</h6>

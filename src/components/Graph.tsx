@@ -1,6 +1,6 @@
-import React from 'react'
-import {Doughnut} from 'react-chartjs-2';
-import '../assets/styles/Graph.css'
+import React from "react";
+import { Doughnut } from "react-chartjs-2";
+import "../assets/styles/Graph.css";
 
 const Graph = () => {
   return (
@@ -15,26 +15,25 @@ const Graph = () => {
         <p className="Trans-history-title"> Transaction Graph</p>
       </div>
 
-      <div className="collapse" id="collapseGraph">
-      <Doughnut data={{
-                                labels: [
-                                    'Income',
-                                    'Expense',
-                                    
-                                ],
-                                datasets: [{
-                                    data: [100, 200 ],
-                                    backgroundColor: [
-                                    'green',
-                                    'red'
-                                    ],
-                                   
-                                    borderWidth: 0
-                                }]
-                            }} />
+      <div className="collapse collapseGraph" id="collapseGraph">
+        <div className="pie-chart">
+          <Doughnut
+            data={{
+              labels: ["Income", "Expense"],
+              datasets: [
+                {
+                  data: [100, 200],
+                  backgroundColor: ["green", "red"],
+
+                  borderWidth: 0,
+                },
+              ],
+            }}
+          />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Graph
+export default Graph;

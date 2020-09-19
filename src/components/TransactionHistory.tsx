@@ -14,10 +14,10 @@ const TransactionHistory = () => {
         <p className="Trans-history-title"> Transaction History</p>
       </div>
 
-      <div className="collapse" id="collapseHistory">
+      <div className="collapse collapseHistory" id="collapseHistory">
       <ul className="historylist">
           
-            <li>
+            <li className="historylist-item">
               <div className="trans-des"><span className="transaction-title">transaction 1 </span> <span className="transaction-amount"> $0.00</span></div>
               <button
                 className="del-btn" >
