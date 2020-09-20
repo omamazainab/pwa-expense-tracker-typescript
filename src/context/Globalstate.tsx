@@ -9,9 +9,10 @@ const initialState = {
 
 export const globalContext = createContext<InitialStateType|any>(initialState);
 
-const [state, dispatch] = useReducer(AppReducer, initialState);
 
-const GlobalProvider = ({children}:any) => {
+export const GlobalProvider = ({children}:any) => {
+
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
   function addTransaction(transaction:TransactionType){
     dispatch({

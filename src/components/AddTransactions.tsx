@@ -1,40 +1,39 @@
-import React,{useContext, useState} from "react";
-import {idGenerator} from '../utils/idGenerator'
-import {globalContext} from '../context/Globalstate'
-import  '../assets/styles/AddTransactions.css'
+import React, { useContext, useState } from "react";
+import { idGenerator } from "../utils/idGenerator";
+import { globalContext } from "../context/Globalstate";
+import "../assets/styles/AddTransactions.css";
 
 const AddTransaction = () => {
-
-  const {addTransaction} = useContext(globalContext)
+  const { addTransaction } = useContext(globalContext);
 
   const [amount, setAmount] = useState<number>(0);
-  const [description, setDescription] = useState<string>('');
+  const [description, setDescription] = useState<string>("");
 
-  function addIncome(){
-    if(amount<=0)
-      alert('please enter amount greater than zero')
-    else{
-      const newTransaction= {
-        id:idGenerator(),
-        description:description,
-        amount:+amount
-      }
-      addTransaction(newTransaction)
+  const addIncome = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (amount <= 0) alert("please enter amount greater than zero");
+    else {
+      const newTransaction = {
+        id: idGenerator(),
+        description: description,
+        amount: +amount,
+      };
+      addTransaction(newTransaction);
     }
-  }
+  };
 
-  function addExpense(){
-    if(amount<=0)
-      alert('please enter amount greater than zero')
-    else{
-      const newTransaction= {
-        id:idGenerator(),
-        description:description,
-        amount:-amount
-      }
-      addTransaction(newTransaction)
+  const addExpense = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (amount <= 0) alert("please enter amount greater than zero");
+    else {
+      const newTransaction = {
+        id: idGenerator(),
+        description: description,
+        amount: -amount,
+      };
+      addTransaction(newTransaction);
     }
-  }
+  };
 
   return (
     <form name="myform" id="myform">
@@ -46,7 +45,7 @@ const AddTransaction = () => {
             type="text"
             placeholder="Description *"
             value={description}
-            onChange={(e)=>setDescription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
           />
         </div>
         <div className="amount-container">
@@ -56,17 +55,17 @@ const AddTransaction = () => {
             placeholder="Amount *"
             min="0"
             value={amount}
-            onChange={(e:React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setAmount(Math.abs(parseFloat(e.target.value)));
             }}
           />
         </div>
       </div>
       <div className="btn-container">
-        <button className="btn income-btn " onClick={addIncome} >
+        <button className="btn income-btn " onClick={addIncome}>
           Add Income
         </button>
-        <button className="btn expense-btn " onClick={addExpense} >
+        <button className="btn expense-btn " onClick={addExpense}>
           Add Expense
         </button>
       </div>

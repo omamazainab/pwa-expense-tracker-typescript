@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
+import {globalContext} from '../context/Globalstate'
+import {TransactionType} from '../services/Transaction'
 import '../assets/styles/TransactionHistory.css'
 
 const TransactionHistory = () => {
+
+  const {transactions} = useContext(globalContext);
+
   return (
     <div>
       <div
@@ -16,14 +21,25 @@ const TransactionHistory = () => {
 
       <div className="collapse collapseHistory" id="collapseHistory">
       <ul className="historylist">
-          
-            <li className="historylist-item">
-              <div className="trans-des"><span className="transaction-title">transaction 1 </span> <span className="transaction-amount"> $0.00</span></div>
-              <button
-                className="del-btn" >
-                <i className="fas fa-trash"></i>
-              </button>
-            </li>
+          {transactions.map((transaction:TransactionType)=>
+            (<li className={
+              transaction.amount < 0
+                ? "historylist-item minus"
+                : "historylist-item plus"
+            }>
+            <div className="trans-des">
+              <span className="transaction-title">{transaction.description}</span> 
+              <span className="transaction-amount"> 
+                {transaction.amount<0?'-':''}${Math.abs(transaction.amount).toFixed(2)}
+              </span>
+            </div>
+            <button
+              className="del-btn" >
+              <i className="fas fa-trash"></i>
+            </button>
+          </li>)
+          )}
+            
           
         </ul>
       </div>
