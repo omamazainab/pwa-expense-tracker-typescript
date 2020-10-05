@@ -12,7 +12,7 @@ const Balance = () => {
         let sum = 0;
         transactions.map((transaction:TransactionType)=>{
             sum += transaction.amount
-            setBalance(sum)
+            return setBalance(sum)
         })
     }, [transactions]);
     
