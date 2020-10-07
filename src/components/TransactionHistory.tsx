@@ -39,7 +39,9 @@ const TransactionHistory = () => {
               </div>
               <button
                 className="del-btn"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log("delete");
                   deleteTransaction(transaction.id);
                 }}
               >
